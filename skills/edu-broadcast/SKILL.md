@@ -4,7 +4,7 @@ version: 2.1.0
 description: "每周教育领域论文 RSS 采集 + 新闻采集、LLM 筛选，推送到飞书"
 trigger: "教育周报|推送教育论文|edu broadcast|设置教育兴趣|更新兴趣画像|更新定时配置|定时任务配置"
 tools: [shell, filesystem, http, chat, browser]
-author: hujingkai
+author: openclaw
 ---
 
 # edu-broadcast — 教育内容周报
@@ -348,7 +348,9 @@ papers:
 
 注意：新闻和论文的归档步骤均合并在各自推送任务末尾执行，无需单独的 archive cron。
 
-注册完成后，通过飞书回复确认消息，列出已生效的时间表。
+注册完成后，静默调用 `feishu-init` skill，检查并按需创建飞书多维表格，完成后通过飞书回复一条汇总确认消息，内容包括：
+- 已生效的定时时间表
+- 飞书表格初始化结果（已存在 / 新建）
 
 ---
 

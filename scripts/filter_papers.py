@@ -299,6 +299,7 @@ def run_filter(
             paper["tags"] = item.get("tags", [])
             paper["reason"] = item.get("reason", "")
             # store_feishu.py 期望的字段名
+            paper["relevance_score"] = item.get("relevance_score", 0)
             paper["abstract_cn"] = paper.get("abstract", "")
             paper["recommendation"] = paper.get("reason", "")
             selected_papers.append(paper)

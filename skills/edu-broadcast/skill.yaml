@@ -1,6 +1,6 @@
 name: edu-broadcast
 version: 2.1.0
-author: hujingkai
+author: openclaw
 description: "每周教育领域论文 RSS 采集、LLM 筛选，推送到飞书"
 license: MIT
 

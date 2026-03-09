@@ -1,7 +1,7 @@
-name: feishu-demo
+name: feishu-init
 version: 1.0.0
 author: openclaw
-description: "飞书多维表格写入功能验证 demo"
+description: "检查飞书多维表格是否存在，缺失则自动创建"
 license: MIT
 
 permissions:
@@ -13,4 +13,4 @@ entryPoint:
   prompt: "参见 SKILL.md"
 
 triggers:
-  keywords: ["飞书demo", "feishu demo", "测试飞书写入"]
+  keywords: ["初始化飞书表格", "feishu init"]
