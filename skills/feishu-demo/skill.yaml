@@ -1,0 +1,16 @@
+name: feishu-demo
+version: 1.0.0
+author: hujingkai
+description: "飞书多维表格写入功能验证 demo"
+license: MIT
+
+permissions:
+  - shell
+  - filesystem
+
+entryPoint:
+  type: natural
+  prompt: "参见 SKILL.md"
+
+triggers:
+  keywords: ["飞书demo", "feishu demo", "测试飞书写入"]

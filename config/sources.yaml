@@ -1,0 +1,132 @@
+# 教育内容采集源配置
+# 由 edu-broadcast skill 的采集脚本读取
+
+# --- 论文搜索关键词 ---
+paper_queries:
+  - query: "AI in education"
+    sources: [semantic_scholar, google_scholar, arxiv]
+  - query: "adaptive learning"
+    sources: [semantic_scholar, google_scholar]
+  - query: "intelligent tutoring system"
+    sources: [semantic_scholar, arxiv]
+  - query: "learning analytics"
+    sources: [semantic_scholar, google_scholar]
+  - query: "educational technology"
+    sources: [semantic_scholar, google_scholar]
+  - query: "教育信息化"
+    sources: [google_scholar]
+  - query: "智慧教育"
+    sources: [google_scholar]
+  - query: "在线教育"
+    sources: [google_scholar]
+
+paper_settings:
+  max_results_per_query: 5
+  days_lookback: 7
+
+# --- 期刊 RSS 订阅源 ---
+# 中文期刊统一走 wanfang 解析逻辑；英文按域名分 4 类处理
+rss_journals:
+  # == 中文期刊（万方）==
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/jyyj"
+    name: "教育研究"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/bjdxjypl"
+    name: "北京大学教育评论"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/hdsfdxxb-jykxb"
+    name: "华东师范大学学报(教育科学版)"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/gdjyyj"
+    name: "高等教育研究"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/qhdxjyyj"
+    name: "清华大学教育研究"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/qqjyzw"
+    name: "全球教育展望"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/zghgxyj"
+    name: "中国高教研究"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/fdjylt"
+    name: "复旦教育论坛"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/kcjcjf"
+    name: "课程·教材·教法"
+    language: zh
+    category: wanfang
+  - url: "https://apps.wanfangdata.com.cn/perios/rss/xkjy"
+    name: "教育学报"
+    language: zh
+    category: wanfang
+  # == 英文期刊 - SAGE ==
+  - url: "https://journals.sagepub.com/action/showFeed?jc=rera&type=etoc&feed=rss"
+    name: "Review of Educational Research"
+    language: en
+    category: sage
+  - url: "https://journals.sagepub.com/action/showFeed?jc=edra&type=etoc&feed=rss"
+    name: "Educational Researcher"
+    language: en
+    category: sage
+  - url: "https://journals.sagepub.com/action/showFeed?jc=aera&type=etoc&feed=rss"
+    name: "American Educational Research Journal"
+    language: en
+    category: sage
+  - url: "https://journals.sagepub.com/action/showFeed?jc=epaa&type=etoc&feed=rss"
+    name: "Educational Evaluation and Policy Analysis"
+    language: en
+    category: sage
+  # == 英文期刊 - Wiley ==
+  - url: "https://onlinelibrary.wiley.com/action/showFeed?jc=14678535&type=etoc&feed=rss"
+    name: "British Journal of Educational Technology"
+    language: en
+    category: wiley
+    issn: "1467-8535"
+  - url: "https://onlinelibrary.wiley.com/action/showFeed?jc=13652729&type=etoc&feed=rss"
+    name: "Journal of Computer Assisted Learning"
+    language: en
+    category: wiley
+    issn: "1365-2729"
+  - url: "https://onlinelibrary.wiley.com/action/showFeed?jc=19362722&type=etoc&feed=rss"
+    name: "Reading Research Quarterly"
+    language: en
+    category: wiley
+    issn: "0034-0553"
+  # == 英文期刊 - Springer ==
+  - url: "https://link.springer.com/search.rss?search-within=Journal&facet-journal-id=10734&sortOrder=newestFirst"
+    name: "Higher Education"
+    language: en
+    category: springer
+    issn: "0018-1560"
+
+rss_settings:
+  days_lookback: 0   # 0 = 不按日期过滤，依赖去重系统；cron 每日运行时传 --days 1
+  timeout: 20
+
+news_settings:
+  days_lookback: 7
+
+# --- 新闻 RSS 源（feedparser 解析，由 collect_news.py 处理）---
+rss_news:
+  - url: "https://www.edsurge.com/feed.xml"
+    name: "EdSurge"
+    language: en
+
+# --- Google News 搜索（已禁用：raw_text 质量差，仅返回标题复述）---
+google_news_queries: []
+
+google_news_settings:
+  max_results_per_query: 8
+  period: "1d"
+
+# --- 定向抓取网站 ---
+scrape_targets: []

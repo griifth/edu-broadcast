@@ -1,0 +1,8 @@
+feedparser>=6.0
+gnews>=0.3.7
+beautifulsoup4>=4.12
+httpx>=0.28
+requests>=2.31
+pyyaml>=6.0
+lark-oapi>=1.4
+openai>=1.0

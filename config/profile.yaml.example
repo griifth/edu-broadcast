@@ -1,0 +1,49 @@
+# 用户兴趣画像示例
+# 由冷启动流程自动生成，也可手动参照本文件格式编辑
+# 冷启动：对 OpenClaw 说"设置教育兴趣"
+
+domains:
+  - name: "AI+教育"
+    weight: 0.9
+    keywords:
+      - "adaptive learning"
+      - "intelligent tutoring"
+      - "AI教育"
+      - "LLM教育应用"
+  - name: "教育技术"
+    weight: 0.8
+    keywords:
+      - "educational technology"
+      - "EdTech"
+      - "智慧教育"
+  - name: "教育政策"
+    weight: 0.6
+    keywords:
+      - "education policy"
+      - "教育改革"
+  - name: "教学法研究"
+    weight: 0.5
+    keywords:
+      - "pedagogy"
+      - "instructional design"
+
+exclude:
+  - "体育教育"
+  - "military education"
+  - "physical education"
+
+language: "bilingual"   # bilingual / zh / en
+
+tag_taxonomy:
+  - "#AI教育"
+  - "#教育政策"
+  - "#K12"
+  - "#高等教育"
+  - "#EdTech"
+  - "#教学法"
+  - "#教育公平"
+  - "#STEM"
+  - "#在线教育"
+  - "#教师发展"
+  - "#学习科学"
+  - "#教育评估"

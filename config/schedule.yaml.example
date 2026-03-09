@@ -1,0 +1,17 @@
+# 定时任务配置示例
+# 由冷启动流程自动生成，也可手动参照本文件格式编辑
+# 冷启动：对 OpenClaw 说"设置教育兴趣"
+
+news:
+  collect_and_push_time: "07:30"   # 每日新闻采集 + 推送飞书的时间
+  days_lookback: 7                 # 新闻回溯天数
+  top_n: 8                         # 每日推送新闻条数
+  sources:
+    xinhua: true                   # 是否启用新华教育频道
+    edsurge: true                  # 是否启用 EdSurge
+
+papers:
+  rss_collect_day: "monday"        # 每周 RSS 采集日（monday-sunday）
+  rss_collect_time: "07:00"        # RSS 采集时间
+  daily_filter_time: "08:00"       # 每日论文筛选 + 推送飞书的时间
+  top_n: 4                         # 每日推送论文篇数

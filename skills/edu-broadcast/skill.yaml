@@ -1,0 +1,23 @@
+name: edu-broadcast
+version: 2.1.0
+author: hujingkai
+description: "每周教育领域论文 RSS 采集、LLM 筛选，推送到飞书"
+license: MIT
+
+permissions:
+  - shell
+  - filesystem
+  - http
+  - chat
+  - browser
+
+entryPoint:
+  type: natural
+  prompt: "参见 SKILL.md"
+
+triggers:
+  keywords: ["教育周报", "推送教育论文", "edu broadcast", "设置教育兴趣"]
+  # 每日 07:00 采集 RSS，更新 pending 池
+  schedule_ingest: "0 7 * * *"
+  # 每周一 08:00 LLM 筛选 + 推送飞书
+  schedule_filter: "0 8 * * 1"

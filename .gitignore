@@ -1,0 +1,18 @@
+# Local secrets
+config/secrets.yaml
+
+# User-specific configs (generated during cold-start)
+config/profile.yaml
+config/schedule.yaml
+
+# Runtime data
+data/
+!data/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Optional local env file
+.env
+.venv/
