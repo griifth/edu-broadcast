@@ -263,4 +263,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import sys as _sys
+    from step_logger import StepLogger
+    with StepLogger("collect_news " + " ".join(_sys.argv[1:])):
+        main()

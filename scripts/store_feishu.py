@@ -230,4 +230,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys as _sys
+    from step_logger import StepLogger
+    with StepLogger("store_feishu " + " ".join(_sys.argv[1:])):
+        main()

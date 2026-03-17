@@ -416,4 +416,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import sys as _sys
+    from step_logger import StepLogger
+    with StepLogger("filter_papers " + " ".join(_sys.argv[1:])):
+        main()
